@@ -2,13 +2,17 @@
     "name": "IEC-61131 Control",
     "keywords": "IEC-61131, control, timers, counters, triggers",
     "description": "IEC-61131 like functions for automation and control purposes",
+	"repository":
+	{
+    "type": "git",
+    "url": "https://github.com/alexiskhoury/control"
+	},
     "authors":
     {
         "name": "Alexis Khoury",
         "url": "http://www.akconcept.epizy.com/"
     },
     "version": "0.1",
-    "downloadUrl": "http://www.akconcept.epizy.com/code/control.zip",
     "frameworks": "arduino",
     "platforms": "atmelavr"
 }
