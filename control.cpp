@@ -189,3 +189,40 @@ void ctd::rst() {
 	d_out = false;
 	d_cv = d_in_pv;
 }
+
+blink::blink(unsigned timelow, unsigned timehigh) : d_timelow(timelow), d_timehigh(timehigh) {
+d_start_off = millis();
+d_end_off = 0;
+d_start_on = 0;
+d_end_on = 0;
+d_out = false;
+//cout << d_start_off << endl;
+}
+
+
+bool blink::out() {
+	if (not d_out) {
+		d_end_off = millis();
+		//cout << d_transition << endl;
+		if ((d_end_off - d_start_off) > d_timelow) {
+			d_out = true;
+			d_start_on = millis();
+		}
+	}
+	if (d_out) {
+		d_end_on = millis();
+		if ((d_end_on - d_start_on) > d_timehigh) {
+			d_out = false;
+			d_start_off = millis();
+		}
+	}
+	return d_out;
+}
+
+void blink::set_timelow(const unsigned timelow) {
+	d_timelow = timelow;
+}
+
+void blink::set_timehigh(const unsigned timehigh) {
+	d_timehigh = timehigh;
+}

@@ -67,4 +67,17 @@ protected:
 	unsigned long d_in_pv, d_cv;
 };
 
+class blink {
+public:
+	blink(unsigned timelow, unsigned timehigh);
+	bool out();
+	void set_timelow(const unsigned);
+	void set_timehigh(const unsigned);
+
+protected:
+	bool d_out;
+	unsigned long d_start_off, d_end_off, d_start_on, d_end_on;
+	unsigned d_timelow, d_timehigh;
+};
+
 #endif
