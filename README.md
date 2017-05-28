@@ -9,6 +9,7 @@ The library is in an early stage of development and contains the following class
  3. tof: allows to instantiate objects similar to IEC-61131 TOF function block
  4. ctu: counter up objects can be created using this class
  5. ctd: counter down objects can be created using this class
+ 6. blink: blink objects are used to create square signals with configurable time high and time low options (this is a non standard IEC function)
 
 ## Example ##
 Check the attached ***example.cpp*** file for details
