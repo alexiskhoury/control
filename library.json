@@ -12,7 +12,21 @@
         "name": "Alexis Khoury",
         "url": "http://www.akconcept.epizy.com/"
     },
-    "version": "0.1",
-    "frameworks": "arduino",
-    "platforms": "atmelavr"
+    "examples": [
+    "[Ee]xamples/*.c",
+    "[Ee]xamples/*.cpp",
+    "[Ee]xamples/*.ino",
+    "[Ee]xamples/*.pde",
+    "[Ee]xamples/*/*.c",
+    "[Ee]xamples/*/*.cpp",
+    "[Ee]xamples/*/*.ino",
+    "[Ee]xamples/*/*.pde",
+    "[Ee]xamples/*/*/*.c",
+    "[Ee]xamples/*/*/*.cpp",
+    "[Ee]xamples/*/*/*.ino",
+    "[Ee]xamples/*/*/*.pde"
+    ],
+  "version": "0.2",
+  "frameworks": "arduino",
+  "platforms": "atmelavr"
 }

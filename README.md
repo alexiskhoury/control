@@ -1,6 +1,13 @@
 # Control #
 This is a simple library reproducing IEC-61131 standard function blocks to use with arduino micro-processor (or any compatible processor).
 
+## Revision History ##
+
+|Version  |Comment  |
+|:-------:|:------------------|
+|0.1      |Initial commit     |
+|0.2      |blink class added  |
+
 ## Features ##
 The library is in an early stage of development and contains the following classes:
 

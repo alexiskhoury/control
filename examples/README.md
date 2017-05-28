@@ -1,7 +1,7 @@
 # Examples #
-A simple demonstration of a timer off function is implemented in the source file tof.cpp. In this demonstration a blower is controlled to power off 20 minutes after a light bulb switch off.
+A simple demonstration of a timer off function is implemented in the source file tof.cpp. In this demonstration a blower is controlled to power off 20 minutes after a light bulb switches off.
 
-The light switching on is detected by a light sensor and the blower is controlled by a relay board.
+The light switching off is detected by a light sensor and the blower is controlled by a relay board.
 
 A more elaborate example is given in full_demo.cpp source file, where different modes of operation can be selected by manoeuvring the lgiht switch (e.g. switching the light twice quickly will switch off the blower definitely).
 
