@@ -8,10 +8,13 @@
 
 //global variables
 bool sensor = 0; // will be used to store the state of light sensor
+bool lstatus = 0; //will be used to trigger the light rising edge
+trigger trig(sensor);
 tof timer(sensor, 1200000); // time to off - 1 200 000 ms = 20 min
-ton timer2(sensor, 5000);
+ton timer2(lstatus, 10000);
 ctu counter(sensor, 4);
-int mode = 2;
+blink blinker(1000,1000);
+int mode = 0;
 
 //setup function
 void setup() {
@@ -30,6 +33,16 @@ void setup() {
 void loop() {
         //get light sensor status
         sensor = !(bool)digitalRead(lsensor);
+        //execute blinker code
+        blinker.out();
+        //ton must have a fixed status input
+        if (trig.redge()) {
+          lstatus = 1;
+          /*Serial.print("redge detected, counter: ");
+          Serial.print(counter.cv());
+          Serial.print(" ; mode: ");
+          Serial.println(mode);*/
+        }
         //set mode based on counter variable
         if (counter.cv() == 2) {
           mode = 0;
@@ -42,7 +55,14 @@ void loop() {
         }
         //reset counter when timer2 fires up
         if (timer2.out()) {
+          /*Serial.print("timer2 on fires up, counter: ");
+          Serial.print(counter.cv());
+          Serial.print(" ; mode: ");
+          Serial.println(mode);*/
           counter.rst();
+          lstatus = 0;
+          timer2.rst();
+
         }
         //mode selection
         if (mode == 0) {
@@ -56,11 +76,7 @@ void loop() {
         if (mode == 2) {
           //assign timer output to digital out
           digitalWrite(relay, (uint8_t)timer.out());
-          digitalWrite(light, !digitalRead(light));
-          // in case timer2 won't fire up - reset counter when timer fires up
-          if (!timer.out()) {
-            counter.rst();
-          }
+          digitalWrite(light, blinker.out());
         }
-        delay(1000);
+        delay(200);
 }
