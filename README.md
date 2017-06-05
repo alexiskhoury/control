@@ -18,7 +18,7 @@ The library is in an early stage of development and contains the following class
  5. ctd: counter down objects can be created using this class
  6. blink: blink objects are used to create square signals with configurable time high and time low options (this is a non standard IEC function)
 
-![library](http://akconcept.epizy.com/images/library.PNG)
+![library](library.png)
 
 ## Example ##
 Check the attached ***examples*** folder for more details
