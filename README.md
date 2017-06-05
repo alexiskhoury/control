@@ -3,10 +3,10 @@ This is a simple library reproducing IEC-61131 standard function blocks to use w
 
 ## Revision History ##
 
-|Version  |Comment  |
-|:-------:|:------------------|
-|0.1      |Initial commit     |
-|0.2      |blink class added  |
+|Version  |Comment  |Release Date |
+|:-------:|:------------------|:-----------:|
+|0.1      |Initial commit     |Jan 2017     |
+|0.2      |blink class added  |May 2017     |
 
 ## Features ##
 The library is in an early stage of development and contains the following classes:
@@ -17,6 +17,8 @@ The library is in an early stage of development and contains the following class
  4. ctu: counter up objects can be created using this class
  5. ctd: counter down objects can be created using this class
  6. blink: blink objects are used to create square signals with configurable time high and time low options (this is a non standard IEC function)
+
+![library](library.png)
 
 ## Example ##
 Check the attached ***example.cpp*** file for details
