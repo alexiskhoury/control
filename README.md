@@ -1,5 +1,5 @@
 # Control #
-This is a simple library reproducing IEC-61131 standard function blocks to use with arduino micro-processor (or any compatible processor).
+This is a simple library reproducing IEC-61131 standard function blocks to use with arduino micro-processor or any compatible processor (Atmel AVR, Espressif, STM32, etc.).
 
 ## Revision History ##
 
@@ -18,10 +18,10 @@ The library is in an early stage of development and contains the following class
  5. ctd: counter down objects can be created using this class
  6. blink: blink objects are used to create square signals with configurable time high and time low options (this is a non standard IEC function)
 
-![library](library.png)
+![library](http://akconcept.epizy.com/images/library.PNG)
 
 ## Example ##
-Check the attached ***example.cpp*** file for details
+Check the attached ***examples*** folder for more details
 ``` C++
 //declaring a timer off object
 tof timer(sensor, 1200000);
